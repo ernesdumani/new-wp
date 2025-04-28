@@ -8,15 +8,8 @@
                     <div class="container">
                         <div class="page-item">
                             <?php 
-                                while( have_posts() ) : the_post();
-                                ?>
-                                    <article>
-                                        <header>
-                                            <h1><?php the_title(); ?></h1>
-                                        </header>
-                                        <?php the_content(); ?>
-                                    </article>
-                                <?php
+                             while (have_posts()) : the_post();
+                              get_template_part('parts/content', 'page');
                                 endwhile;
                             ?>                                
                         </div>
