@@ -10,9 +10,9 @@ add_action( 'wp_enqueue_scripts', 'wpdevs_load_scripts' );
 function wpdevs_config(){
     register_nav_menus(
         array(
-            'wp_devs_main_menu' => 'Main Menu',
-            'wp_devs_footer_menu' => 'Footer Menu'
-        )
+            'wp_devs_main_menu' =>  esc_html__('Main Menu', 'wp_devs')
+            'wp_devs_footer_menu' => esc_html__('Footer Menu', 'wp_devs') 
+        )esc_html__('','wp_devs')
     );
 
     $args = array(
@@ -34,9 +34,9 @@ add_action( 'widgets_init', 'wpdevs_sidebars' );
 function wpdevs_sidebars(){
     register_sidebar(
         array(
-            'name'  => 'Blog Sidebar',
+            'name'  => esc_html__('Blog Sidebar','wp_devs'),
             'id'    => 'sidebar-blog',
-            'description'   => 'This is the Blog Sidebar. You can add your widgets here.',
+            'description'   => esc_html__('This is the Blog Sidebar. You can add your widgets here.','wp_devs'),
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -45,9 +45,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => 'Service 1',
+            'name'  => esc_html__('Service 1','wp_devs')
             'id'    => 'services-1',
-            'description'   => 'First Service Area',
+            'description'   => esc_html__('First Service Area','wp_devs')
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -56,9 +56,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => 'Service 2',
+            'name'  => esc_html__( 'Service 2','wp-devs')
             'id'    => 'services-2',
-            'description'   => 'Second Service Area',
+            'description'   => esc_html__('Second Service Area','wp-devs') 
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
@@ -67,9 +67,9 @@ function wpdevs_sidebars(){
     );
     register_sidebar(
         array(
-            'name'  => 'Service 3',
+            'name'  => esc_html__('Service 3','wp-devs') 
             'id'    => 'services-3',
-            'description'   => 'Third Service Area',
+            'description'   =>esc_html__('Third Service Area','wp-devs') 
             'before_widget' => '<div class="widget-wrapper">',
             'after_widget'  => '</div>',
             'before_title'  => '<h4 class="widget-title">',
